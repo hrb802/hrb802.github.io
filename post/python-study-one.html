@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python基础学习 | 灯三千的潘多拉魔盒</title><meta name="author" content="Brihen"><meta name="copyright" content="Brihen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python基础学习在这里默认已经搭建好python环境以及编译器，就不过多描述了。 基础语法变量定义变量 定义变量 在 Python 中，变量不需要提前声明类型，直接给变量赋值即可完成定义。变量名遵循一定的命名规则，只能包含字母、数字和下划线，且不能以数字开头，同时不能使用 Python 的关键字。 查看Python的关键字： 12import keywordprint(keyword.kwli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础学习">
+<meta property="og:url" content="https://hrb802.github.io/post/python-study-one.html">
+<meta property="og:site_name" content="灯三千的潘多拉魔盒">
+<meta property="og:description" content="Python基础学习在这里默认已经搭建好python环境以及编译器，就不过多描述了。 基础语法变量定义变量 定义变量 在 Python 中，变量不需要提前声明类型，直接给变量赋值即可完成定义。变量名遵循一定的命名规则，只能包含字母、数字和下划线，且不能以数字开头，同时不能使用 Python 的关键字。 查看Python的关键字： 12import keywordprint(keyword.kwli">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/hrb802/Images/raw/main/Lanbo.jpg">
+<meta property="article:published_time" content="2025-06-21T09:22:45.000Z">
+<meta property="article:modified_time" content="2025-06-21T10:08:04.622Z">
+<meta property="article:author" content="Brihen">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Pycharm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/hrb802/Images/raw/main/Lanbo.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python基础学习",
+  "url": "https://hrb802.github.io/post/python-study-one.html",
+  "image": "https://github.com/hrb802/Images/raw/main/Lanbo.jpg",
+  "datePublished": "2025-06-21T09:22:45.000Z",
+  "dateModified": "2025-06-21T10:08:04.622Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Brihen",
+      "url": "https://hrb802.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hrb802.github.io/post/python-study-one.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python基础学习',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://github.com/hrb802/Images/raw/main/ProfilePic.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://github.com/hrb802/Images/raw/main/Lanbo.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">灯三千的潘多拉魔盒</span></a><a class="nav-page-title" href="/"><span class="site-name">Python基础学习</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Python基础学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-06-21T09:22:45.000Z" title="发表于 2025-06-21 17:22:45">2025-06-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-21T10:08:04.622Z" title="更新于 2025-06-21 18:08:04">2025-06-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E5%AD%A6%E4%B9%A0/">Python学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Python基础学习"><a href="#Python基础学习" class="headerlink" title="Python基础学习"></a>Python基础学习</h1><p>在这里默认已经搭建好python环境以及编译器，就不过多描述了。</p>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><ol>
+<li>定义变量<br> 在 Python 中，变量不需要提前声明类型，直接给变量赋值即可完成定义。变量名遵循一定的命名规则，只能包含字母、数字和下划线，且不能以数字开头，同时不能使用 Python 的关键字。<br> 查看Python的关键字： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line"><span class="built_in">print</span>(keyword.kwlist)</span><br></pre></td></tr></table></figure></li>
+<li>变量赋值<br> 变量赋值可以使用等号（&#x3D;）进行，将等号右侧的值赋给左侧的变量。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个整数变量</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="comment"># 定义一个字符串变量</span></span><br><span class="line">b = <span class="string">&quot;hello&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><ol>
+<li>整数<br> 整数是没有小数点的数字，包括正数、负数和零。在Python中可以表示任意大小的整数，没有长度限制。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个整数变量</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="comment"># 定义一个负数变量</span></span><br><span class="line">b = -<span class="number">10</span></span><br><span class="line"><span class="comment"># 定义一个零变量</span></span><br><span class="line">c = <span class="number">0</span></span><br></pre></td></tr></table></figure></li>
+<li>浮点数<br> 浮点数是带有小数点的数字，用于表示小数。在Python中浮点数的精度是有限的，不能表示所有的小数，可能会有舍入误差。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个浮点数变量</span></span><br><span class="line">a = <span class="number">3.14</span></span><br><span class="line"><span class="comment"># 定义一个负数浮点数变量</span></span><br><span class="line">b = -<span class="number">3.14</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ol>
+<li>字符串定义<br> 字符串是由字符组成的序列，可以使用单引号（’）、双引号（”）或三引号（’’’或”””）定义。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个字符串变量</span></span><br><span class="line">a = <span class="string">&quot;hello&quot;</span></span><br><span class="line"><span class="comment"># 定义一个使用双引号定义的字符串变量</span></span><br><span class="line">b = <span class="string">&quot;hello world&quot;</span></span><br><span class="line"><span class="comment"># 定义一个使用三引号定义的字符串变量</span></span><br><span class="line">c = <span class="string">&#x27;&#x27;&#x27;hello world&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 定义一个使用三引号定义的多行字符串变量</span></span><br><span class="line">d = <span class="string">&quot;&quot;&quot;hello world</span></span><br><span class="line"><span class="string">    hello python&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>字符串拼接<br> 字符串可以使用加号（+）进行拼接，也可以使用乘号（*）重复拼接。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字符串拼接</span></span><br><span class="line">a = <span class="string">&quot;hello&quot;</span></span><br><span class="line">b = <span class="string">&quot;world&quot;</span></span><br><span class="line">c = a + b</span><br><span class="line"><span class="built_in">print</span>(c)  <span class="comment"># 输出 &quot;helloworld&quot;</span></span><br><span class="line">d = a * <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(d)  <span class="comment"># 输出 &quot;hellohellohello&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><ol>
+<li>if语句<br> if语句用于判断条件是否成立，如果成立则执行相应的代码块。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if语句</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="keyword">if</span> a &gt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a大于5&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>if-else语句<br> if-else语句用于判断条件是否成立，如果成立则执行if代码块，否则执行else代码块。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if-else语句</span></span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="keyword">if</span> a &gt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a大于5&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> a &lt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a小于5&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a等于5&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>if-elif-else语句<br> if-elif-else语句用于判断多个条件是否成立，如果成立则执行相应的代码块。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if-elif-else语句</span></span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="keyword">if</span> a &gt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a大于5&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> a &lt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a小于5&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a等于5&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><ol>
+<li><p>for循环<br> for循环用于遍历序列（如列表list、元组tuple、字符串str），依次取出序列中的每个元素，并执行相应的代码块。</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for循环</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="built_in">print</span>(i)    <span class="comment">#输出列表中的元素</span></span><br><span class="line"><span class="comment"># for循环遍历字符串</span></span><br><span class="line">b = <span class="string">&quot;hello&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    <span class="built_in">print</span>(i)    <span class="comment">#输出字符串中的字符</span></span><br><span class="line"><span class="comment"># for循环遍历字典</span></span><br><span class="line">c = &#123;<span class="string">&quot;a&quot;</span>: <span class="number">1</span>, <span class="string">&quot;b&quot;</span>: <span class="number">2</span>, <span class="string">&quot;c&quot;</span>: <span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> c:</span><br><span class="line">    <span class="built_in">print</span>(i)    <span class="comment">#输出字典中的键 </span></span><br><span class="line"><span class="comment"># 预计输出：</span></span><br><span class="line"><span class="comment"># a</span></span><br><span class="line"><span class="comment"># b</span></span><br><span class="line"><span class="comment"># c</span></span><br><span class="line">![alt text](image.png)</span><br><span class="line"><span class="comment"># for循环遍历字典的键值对</span></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> c.items():</span><br><span class="line">    <span class="built_in">print</span>(key, value)    <span class="comment">#输出字典中的键值对</span></span><br><span class="line"><span class="comment">#预计输出：</span></span><br><span class="line"><span class="comment"># a 1</span></span><br><span class="line"><span class="comment"># b 2</span></span><br><span class="line"><span class="comment"># c 3</span></span><br><span class="line">![alt text](image.png)</span><br><span class="line"><span class="comment"># for循环遍历列表的索引</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(a)):</span><br><span class="line">    <span class="built_in">print</span>(i, a[i])    <span class="comment">#输出列表的索引和元素</span></span><br><span class="line"><span class="comment"># 预计输出：</span></span><br><span class="line"><span class="comment"># 0 1</span></span><br><span class="line"><span class="comment"># 1 2</span></span><br><span class="line"><span class="comment"># 2 3</span></span><br><span class="line"><span class="comment"># 3 4</span></span><br><span class="line"><span class="comment"># 4 5</span></span><br><span class="line">![alt text](image-<span class="number">1.</span>png)</span><br></pre></td></tr></table></figure></li>
+<li><p>while循环<br> while循环用于重复执行一段代码，直到条件不成立。</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># while循环</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> a &lt; <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    a += <span class="number">1</span></span><br><span class="line"><span class="comment"># 预计输出：</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line"><span class="comment"># 4</span></span><br></pre></td></tr></table></figure></li>
+<li><p>break语句<br> break语句用于跳出循环，当循环执行到break语句时，会立即跳出循环。</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># break语句</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(i)    <span class="comment">#输出列表中的元素</span></span><br><span class="line"><span class="comment"># 预计输出：</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>continue语句<br> continue语句用于跳过当前循环，当循环执行到continue语句时，会跳过当前循环，继续执行下一次循环。</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># continue语句</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(i)    <span class="comment">#输出列表中的元素</span></span><br><span class="line"><span class="comment"># 预计输出：</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line"><span class="comment"># 5</span></span><br></pre></td></tr></table></figure></li>
+<li><p>pass语句<br> pass语句用于占位，当语法上需要语句，但程序不需要任何动作时，可以使用pass语句。</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pass语句</span></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="keyword">if</span> a &gt; <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a小于等于5&quot;</span>) </span><br><span class="line"><span class="comment"># 预计输出：</span></span><br><span class="line"><span class="comment"># a小于等于5</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><h3 id="Python标准库"><a href="#Python标准库" class="headerlink" title="Python标准库"></a>Python标准库</h3><h4 id="os模块"><a href="#os模块" class="headerlink" title="os模块"></a>os模块</h4><ol>
+<li><p>os模块介绍<br> os 模块是 Python 标准库中的一个重要模块，它提供了一系列与操作系统进行交互的函数，可用于处理文件和目录、管理环境变量等操作。这使得 Python 程序能够跨不同操作系统（如 Windows、Linux、macOS）运行，增强了代码的可移植性。</p>
+</li>
+<li><p>os模块常用函数</p>
+<ul>
+<li>os.getcwd()：获取当前工作目录</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 调用 os.getcwd() 函数获取当前 Python 脚本的工作目录</span></span><br><span class="line">current_dir = os.getcwd()</span><br><span class="line"><span class="comment"># 打印当前工作目录</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;当前工作目录是: <span class="subst">&#123;current_dir&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.chdir(path)：改变当前工作目录</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要切换到的新工作目录路径</span></span><br><span class="line">new_dir = <span class="string">&#x27;/path/to/new/directory&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 调用 os.chdir() 函数尝试切换到新的工作目录</span></span><br><span class="line">    os.chdir(new_dir)</span><br><span class="line">    <span class="comment"># 打印成功切换后的新工作目录</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;已成功切换到新的工作目录: <span class="subst">&#123;os.getcwd()&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="comment"># 若指定的目录不存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录不存在&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.listdir(path)：返回指定目录下的所有文件和目录名</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要列出内容的目标目录路径</span></span><br><span class="line">directory = <span class="string">&#x27;/path/to/target/directory&#x27;</span></span><br><span class="line"><span class="comment"># 调用 os.listdir() 函数获取指定目录下的所有文件和目录名</span></span><br><span class="line">file_list = os.listdir(directory)</span><br><span class="line"><span class="comment"># 打印指定目录下的文件和目录列表</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;directory&#125;</span> 目录下的文件和目录有: <span class="subst">&#123;file_list&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.mkdir(path)：创建单层目录</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要创建的单层目录路径</span></span><br><span class="line">new_dir = <span class="string">&#x27;/path/to/new/directory&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 调用 os.mkdir() 函数尝试创建单层目录</span></span><br><span class="line">    os.mkdir(new_dir)</span><br><span class="line">    <span class="comment"># 打印成功创建目录的信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;已成功创建目录: <span class="subst">&#123;new_dir&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileExistsError:</span><br><span class="line">    <span class="comment"># 若指定目录已存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录已存在&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="comment"># 若父目录不存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录不存在&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.makedirs(path)：创建多层目录</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要创建的多层目录路径</span></span><br><span class="line">new_dir = <span class="string">&#x27;/path/to/new/directory&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 调用 os.makedirs() 函数尝试创建多层目录</span></span><br><span class="line">    os.makedirs(new_dir)</span><br><span class="line">    <span class="comment"># 打印成功创建目录的信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;已成功创建目录: <span class="subst">&#123;new_dir&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileExistsError:</span><br><span class="line">    <span class="comment"># 若指定目录已存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录已存在&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="comment"># 若路径中存在无效部分，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录不存在&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.remove(path)：删除文件</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要删除的文件路径</span></span><br><span class="line">file_path = <span class="string">&#x27;/path/to/file.txt&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 调用 os.remove() 函数尝试删除指定文件</span></span><br><span class="line">    os.remove(file_path)</span><br><span class="line">    <span class="comment"># 打印成功删除文件的信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;已成功删除文件: <span class="subst">&#123;file_path&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="comment"># 若指定文件不存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的文件不存在&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.rmdir(path)：删除单层目录</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要删除的单层目录路径</span></span><br><span class="line">dir_path = <span class="string">&#x27;/path/to/directory&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 调用 os.rmdir() 函数尝试删除单层目录</span></span><br><span class="line">    os.rmdir(dir_path)</span><br><span class="line">    <span class="comment"># 打印成功删除目录的信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;已成功删除目录: <span class="subst">&#123;dir_path&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="comment"># 若指定目录不存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录不存在&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> OSError:</span><br><span class="line">    <span class="comment"># 若目录不为空，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;目录不为空，无法删除&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.removedirs(path)：删除多层目录</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要删除的多层目录路径</span></span><br><span class="line">dir_path = <span class="string">&#x27;/path/to/directory&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 调用 os.removedirs() 函数尝试删除多层目录</span></span><br><span class="line">    os.removedirs(dir_path)</span><br><span class="line">    <span class="comment"># 打印成功删除目录的信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;已成功删除目录: <span class="subst">&#123;dir_path&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="comment"># 若指定目录不存在，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;指定的目录不存在&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> OSError:</span><br><span class="line">    <span class="comment"># 若目录不为空，捕获异常并打印提示信息</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;目录不为空，无法删除&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.system(command)：运行系统命令</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义要执行的系统命令，此处以 Linux 系统的 &#x27;ls -l&#x27; 命令为例</span></span><br><span class="line">command = <span class="string">&#x27;ls -l&#x27;</span></span><br><span class="line"><span class="comment"># 调用 os.system() 函数执行系统命令</span></span><br><span class="line">os.system(command)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.environ：获取环境变量</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 打印当前系统的所有环境变量</span></span><br><span class="line"><span class="built_in">print</span>(os.environ)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>os.path模块：处理文件路径</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 定义一个文件路径</span></span><br><span class="line">path = <span class="string">&#x27;/path/to/file.txt&#x27;</span></span><br><span class="line"><span class="comment"># 打印文件路径中的文件名部分</span></span><br><span class="line"><span class="built_in">print</span>(os.path.basename(path))    <span class="comment">#输出文件名</span></span><br><span class="line"><span class="comment"># 打印文件路径中的目录部分</span></span><br><span class="line"><span class="built_in">print</span>(os.path.dirname(path))    <span class="comment">#输出文件路径</span></span><br><span class="line"><span class="comment"># 打印将路径拆分为目录和文件名的元组</span></span><br><span class="line"><span class="built_in">print</span>(os.path.split(path))    <span class="comment">#输出路径和文件名</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://hrb802.github.io">Brihen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://hrb802.github.io/post/python-study-one.html">https://hrb802.github.io/post/python-study-one.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://hrb802.github.io" target="_blank">灯三千的潘多拉魔盒</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/Pycharm/">Pycharm</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/hrb802/Images/raw/main/Lanbo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://github.com/hrb802/Images/raw/main/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="https://github.com/hrb802/Images/raw/main/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://github.com/hrb802/Images/raw/main/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="https://github.com/hrb802/Images/raw/main/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://github.com/hrb802/Images/raw/main/ProfilePic.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Brihen</div><div class="author-info-description">来自天堂的咸鱼</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hrb802"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/hrb802" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:hrb802@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是灯三千/Brihen的潘多拉魔盒，如遇到什么问题请联系作者哦。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">Python基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">定义变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.3.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">条件语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">循环语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">常用模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E6%A0%87%E5%87%86%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text">Python标准库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#os%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">os模块</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/python-study-one.html" title="Python基础学习"><img src="https://github.com/hrb802/Images/raw/main/Lanbo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python基础学习"/></a><div class="content"><a class="title" href="/post/python-study-one.html" title="Python基础学习">Python基础学习</a><time datetime="2025-06-21T09:22:45.000Z" title="发表于 2025-06-21 17:22:45">2025-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/test.html" title="测试"><img src="https://github.com/hrb802/Images/raw/main/Luotianyi.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试"/></a><div class="content"><a class="title" href="/post/test.html" title="测试">测试</a><time datetime="2025-06-20T09:53:32.458Z" title="发表于 2025-06-20 17:53:32">2025-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4a17b156.html" title="Hello World"><img src="https://github.com/hrb802/Images/raw/main/Chuyin.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/post/4a17b156.html" title="Hello World">Hello World</a><time datetime="2025-06-19T09:42:49.065Z" title="发表于 2025-06-19 17:42:49">2025-06-19</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 By Brihen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b2</a></span></div><div class="footer_custom_text">如遇到什么问题或建议，请联系作者，天官赐福，百无禁忌。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script data-pjax defer src="https://npm.elemecdn.com/tzy-blog/lib/js/theme/chocolate.js"></script><script async src = "https://npm.elemecdn.com/tzy-blog/lib/js/theme/cursor.js></script>"<canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([href="/music/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
