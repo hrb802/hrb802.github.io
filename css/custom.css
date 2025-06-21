@@ -53,10 +53,10 @@ hr:before {
     transition: all .2s ease-out;
     /* 绘制四个蓝色小方格 */
     background-image: 
-        linear-gradient(blue, blue),
-        linear-gradient(blue, blue),
-        linear-gradient(blue, blue),
-        linear-gradient(blue, blue);
+        linear-gradient(rgb(0, 132, 255), rgb(0, 132, 255)),
+        linear-gradient(rgb(7, 106, 244), rgb(7, 106, 244)),
+        linear-gradient(rgb(11, 82, 246), rgb(11, 82, 246)),
+        linear-gradient(rgb(20, 58, 244), rgb(20, 58, 244));
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: 0 0, 100% 0, 0 100%, 100% 100%;
