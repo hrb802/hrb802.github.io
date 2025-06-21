@@ -60,8 +60,8 @@ hr:before {
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: 0 0, 100% 0, 0 100%, 100% 100%;
-    /* 应用动画 */
-    animation: squareSwap 2s infinite linear;
+    /* 应用动画，将时长从 2s 调整为 4s 以减慢速度 */
+    animation: squareSwap 4s infinite linear;
 }
 
 #article-container h1 {
@@ -74,9 +74,9 @@ hr:before {
 
 #article-container h1:before {
     margin-left: -1.3rem;
-    top: calc(50% - .5rem);
-    width: 1rem;
-    height: 1rem;
+    top: calc(50% - .6rem);
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 #article-container h1:hover {
@@ -93,9 +93,9 @@ hr:before {
 
 #article-container h2:before {
     margin-left: -1.4rem;
-    top: calc(50% - .45rem);
-    width: .9rem;
-    height: .9rem;
+    top: calc(50% - .55rem);
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 #article-container h2:hover {
@@ -114,9 +114,9 @@ hr:before {
 
 #article-container h3:before {
     margin-left: -1.2rem;
-    top: calc(50% - .4rem);
-    width: .8rem;
-    height: .8rem;
+    top: calc(50% - .5rem);
+    width: 1rem;
+    height: 1rem;
 }
 
 #article-container h3:hover {
@@ -133,9 +133,9 @@ hr:before {
 
 #article-container h4:before {
     margin-left: -1rem;
-    top: calc(50% - .35rem);
-    width: .7rem;
-    height: .7rem;
+    top: calc(50% - .45rem);
+    width: 0.9rem;
+    height: 0.9rem;
 }
 
 #article-container h4:hover {
@@ -152,9 +152,9 @@ hr:before {
 
 #article-container h5:before {
     margin-left: -.8rem;
-    top: calc(50% - .3rem);
-    width: .6rem;
-    height: .6rem;
+    top: calc(50% - .4rem);
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 #article-container h5:hover {
@@ -171,9 +171,9 @@ hr:before {
 
 #article-container h6:before {
     margin-left: -.8rem;
-    top: calc(50% - .3rem);
-    width: .6rem;
-    height: .6rem;
+    top: calc(50% - .4rem);
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 #article-container h6:hover {
@@ -199,4 +199,3 @@ hr:before {
 ::-webkit-scrollbar-corner {
     background-color: transparent
 }
-
