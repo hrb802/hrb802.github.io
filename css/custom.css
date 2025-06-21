@@ -60,12 +60,12 @@ hr:before {
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: 0 0, 100% 0, 0 100%, 100% 100%;
-    /* 应用动画，将时长从 8s 调整为 2s 以加快速度（8s * (1 - 3/4) = 2s） */
-    animation: squareSwap 2s infinite linear;
+    /* 应用动画，将时长从 2s 调整为 4s 以减慢速度 */
+    animation: squareSwap 4s infinite linear;
 }
 
 #article-container h1 {
-    padding-left: 1.8rem /* 因方块变小，调整标题内边距 */
+    padding-left: 1.4rem
 }
 
 #article-container h1 code {
@@ -73,18 +73,18 @@ hr:before {
 }
 
 #article-container h1:before {
-    margin-left: -1.8rem; /* 因方块变小，调整左外边距 */
-    top: calc(50% - 0.8rem); /* 因方块变小，调整垂直位置 */
-    width: 1.6rem; /* 宽度缩小三分之一 (2.4rem * (1 - 1/3) = 1.6rem) */
-    height: 1.6rem; /* 高度缩小三分之一 */
+    margin-left: -1.3rem;
+    top: calc(50% - .6rem);
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 #article-container h1:hover {
-    padding-left: 2rem /* 因方块变小，调整悬停时标题内边距 */
+    padding-left: 1.6rem
 }
 
 #article-container h2 {
-    padding-left: 1.7rem /* 因方块变小，调整标题内边距 */
+    padding-left: 1.3rem
 }
 
 #article-container h2 code {
@@ -92,18 +92,18 @@ hr:before {
 }
 
 #article-container h2:before {
-    margin-left: -1.8rem; /* 因方块变小，调整左外边距 */
-    top: calc(50% - 0.73rem); /* 因方块变小，调整垂直位置 */
-    width: 1.47rem; /* 宽度缩小三分之一 (2.2rem * (1 - 1/3) ≈ 1.47rem) */
-    height: 1.47rem; /* 高度缩小三分之一 */
+    margin-left: -1.4rem;
+    top: calc(50% - .55rem);
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 #article-container h2:hover {
-    padding-left: 1.9rem /* 因方块变小，调整悬停时标题内边距 */
+    padding-left: 1.5rem
 }
 
 #article-container h3 {
-    padding-left: 1.6rem /* 因方块变小，调整标题内边距 */
+    padding-left: 1.2rem
 }
 
 #article-container h3 code {
@@ -113,18 +113,18 @@ hr:before {
 }
 
 #article-container h3:before {
-    margin-left: -1.6rem; /* 因方块变小，调整左外边距 */
-    top: calc(50% - 0.67rem); /* 因方块变小，调整垂直位置 */
-    width: 1.33rem; /* 宽度缩小三分之一 (2rem * (1 - 1/3) ≈ 1.33rem) */
-    height: 1.33rem; /* 高度缩小三分之一 */
+    margin-left: -1.2rem;
+    top: calc(50% - .5rem);
+    width: 1rem;
+    height: 1rem;
 }
 
 #article-container h3:hover {
-    padding-left: 1.8rem /* 因方块变小，调整悬停时标题内边距 */
+    padding-left: 1.4rem
 }
 
 #article-container h4 {
-    padding-left: 1.5rem /* 因方块变小，调整标题内边距 */
+    padding-left: 1.1rem
 }
 
 #article-container h4 code {
@@ -132,18 +132,18 @@ hr:before {
 }
 
 #article-container h4:before {
-    margin-left: -1.33rem; /* 因方块变小，调整左外边距 */
-    top: calc(50% - 0.6rem); /* 因方块变小，调整垂直位置 */
-    width: 1.2rem; /* 宽度缩小三分之一 (1.8rem * (1 - 1/3) = 1.2rem) */
-    height: 1.2rem; /* 高度缩小三分之一 */
+    margin-left: -1rem;
+    top: calc(50% - .45rem);
+    width: 0.9rem;
+    height: 0.9rem;
 }
 
 #article-container h4:hover {
-    padding-left: 1.7rem /* 因方块变小，调整悬停时标题内边距 */
+    padding-left: 1.3rem
 }
 
 #article-container h5 {
-    padding-left: 1.33rem /* 因方块变小，调整标题内边距 */
+    padding-left: 1rem
 }
 
 #article-container h5 code {
@@ -151,18 +151,18 @@ hr:before {
 }
 
 #article-container h5:before {
-    margin-left: -1.07rem; /* 因方块变小，调整左外边距 */
-    top: calc(50% - 0.53rem); /* 因方块变小，调整垂直位置 */
-    width: 1.07rem; /* 宽度缩小三分之一 (1.6rem * (1 - 1/3) ≈ 1.07rem) */
-    height: 1.07rem; /* 高度缩小三分之一 */
+    margin-left: -.8rem;
+    top: calc(50% - .4rem);
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 #article-container h5:hover {
-    padding-left: 1.53rem /* 因方块变小，调整悬停时标题内边距 */
+    padding-left: 1.2rem
 }
 
 #article-container h6 {
-    padding-left: 1.33rem /* 因方块变小，调整标题内边距 */
+    padding-left: 1rem
 }
 
 #article-container h6 code {
@@ -170,14 +170,14 @@ hr:before {
 }
 
 #article-container h6:before {
-    margin-left: -1.07rem; /* 因方块变小，调整左外边距 */
-    top: calc(50% - 0.53rem); /* 因方块变小，调整垂直位置 */
-    width: 1.07rem; /* 宽度缩小三分之一 (1.6rem * (1 - 1/3) ≈ 1.07rem) */
-    height: 1.07rem; /* 高度缩小三分之一 */
+    margin-left: -.8rem;
+    top: calc(50% - .4rem);
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 #article-container h6:hover {
-    padding-left: 1.53rem /* 因方块变小，调整悬停时标题内边距 */
+    padding-left: 1.2rem
 }
 
 ::-webkit-scrollbar {
