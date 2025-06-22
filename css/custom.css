@@ -216,30 +216,6 @@ hr:before {
     background-color: transparent
 }
 
-
-/* 鼠标拖尾样式 */
-.mouse-trail {
-    position: absolute;
-    background: linear-gradient(to right, rgba(0, 132, 255, 0.8), rgba(0, 132, 255, 0));
-    pointer-events: none;
-    z-index: 9999;
-    /* 添加立体感 */
-    box-shadow: 0 0 10px rgba(0, 132, 255, 0.7);
-    transform-origin: left center;
-    animation: fadeOut 1s linear forwards;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scaleX(0);
-    }
-}
-
 /* 鼠标点击效果样式 */
 .click-effect {
     position: absolute;
