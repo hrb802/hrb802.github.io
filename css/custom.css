@@ -237,3 +237,58 @@ hr:before {
         transform: scale(5);
     }
 }
+
+/* 音乐播放器 */
+/* 音乐容器整体样式，设置天蓝色背景 */
+body .music-container {
+  background-color: #87CEEB;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* 音乐列表样式，取消滚动，设置网格布局 */
+body .aplayer-list {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 一列 */
+  gap: 10px;
+  max-height: none;
+}
+
+/* 限制每一页最多 27 首歌 */
+body .aplayer-list ol li:nth-child(n+28) {
+  display: none;
+}
+
+/* 歌曲项样式 */
+body .aplayer-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  color: #090909; /* 红色字体 */
+  font-size: 16px; /* 适当放大字体 */
+}
+
+/* 鼠标悬停歌曲项样式 */
+body .aplayer-list li:hover {
+  background-color: rgba(232, 47, 47, 0.912);
+}
+
+/* 当前播放歌曲样式 */
+body .aplayer-list li.aplayer-list-light {
+  background-color: rgba(255, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 18px; /* 再次放大当前播放歌曲字体 */
+}
+
+/* 歌词容器样式 */
+body .aplayer-lrc {
+  color: #040404; /* 红色歌词 */
+  font-size: 16px; /* 适当放大歌词字体 */
+}
+
+/* 播放器样式 */
+body .aplayer {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
