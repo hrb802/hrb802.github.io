@@ -238,3 +238,71 @@ hr:before {
     }
 }
 
+/* 音乐容器整体样式，设置背景图 */
+.music-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.music-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: '/img/紫罗兰永恒花园.jpg';
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* 音乐列表样式，取消滚动，设置网格布局 */
+.aplayer-list {
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, 1fr) !important;
+  gap: 10px !important;
+  max-height: none !important;
+}
+
+/* 限制每一页最多 27 首歌 */
+.aplayer-list ol li:nth-child(n+28) {
+  display: none;
+}
+
+/* 歌曲项样式 */
+.aplayer-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  color: #090909; 
+  font-size: 16px; 
+}
+
+/* 鼠标悬停歌曲项样式 */
+.aplayer-list li:hover {
+  background-color: rgba(232, 47, 47, 0.912);
+}
+
+/* 当前播放歌曲样式 */
+.aplayer-list li.aplayer-list-light {
+  background-color: rgba(255, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 18px; 
+}
+
+/* 歌词容器样式 */
+.aplayer-lrc {
+  color: #040404; 
+  font-size: 16px; 
+}
+
+/* 播放器样式 */
+.aplayer {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
