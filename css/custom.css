@@ -261,6 +261,7 @@ hr:before {
 }
 
 /* 音乐列表样式，取消滚动，设置网格布局 */
+/* 音乐列表样式，取消滚动，设置网格布局 */
 .aplayer-list {
   overflow: hidden !important;
   display: grid !important;
@@ -271,38 +272,38 @@ hr:before {
 
 /* 限制每一页最多 27 首歌 */
 .aplayer-list ol li:nth-child(n+28) {
-  display: none;
+  display: none !important;
 }
 
 /* 歌曲项样式 */
 .aplayer-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-  color: #090909; 
-  font-size: 16px; 
+  padding: 10px !important;
+  border-bottom: 1px solid #ccc !important;
+  cursor: pointer !important;
+  color: #090909 !important; 
+  font-size: 16px !important; 
 }
 
 /* 鼠标悬停歌曲项样式 */
 .aplayer-list li:hover {
-  background-color: rgba(232, 47, 47, 0.912);
+  background-color: rgba(232, 47, 47, 0.912) !important;
 }
 
 /* 当前播放歌曲样式 */
 .aplayer-list li.aplayer-list-light {
-  background-color: rgba(255, 0, 0, 0.2);
-  font-weight: bold;
-  font-size: 18px; 
+  background-color: rgba(255, 0, 0, 0.2) !important;
+  font-weight: bold !important;
+  font-size: 18px !important; 
 }
 
 /* 歌词容器样式 */
 .aplayer-lrc {
-  color: #040404; 
-  font-size: 16px; 
+  color: #040404 !important; 
+  font-size: 16px !important; 
 }
 
 /* 播放器样式 */
 .aplayer {
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
 }
