@@ -260,7 +260,7 @@ hr:before {
   z-index: -1;
 }
 
-/* 音乐列表样式，取消滚动，设置网格布局 */
+
 /* 音乐列表样式，取消滚动，设置网格布局 */
 .aplayer-list {
   overflow: hidden !important;
@@ -286,7 +286,7 @@ hr:before {
 
 /* 鼠标悬停歌曲项样式 */
 .aplayer-list li:hover {
-  background-color: rgba(232, 47, 47, 0.912) !important;
+  background-color: #369 !important;
 }
 
 /* 当前播放歌曲样式 */
