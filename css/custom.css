@@ -287,6 +287,7 @@ hr:before {
 /* 鼠标悬停歌曲项样式 */
 .aplayer-list li:hover {
   background-color: #369 !important;
+  color: white;
 }
 
 /* 当前播放歌曲样式 */
