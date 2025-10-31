@@ -17,22 +17,79 @@ hr:before {
     -webkit-font-smoothing: antialiased
 }
 
-/* 定义三个小方格交换位置的动画 */
-@keyframes squareSwap {
+/* 删除原来的三个小方格交换位置动画 */
+/* 添加四棱锥旋转动画 */
+@keyframes pyramidSpin {
     0% {
-        background-position: 0 0, 100% 0, 50% 100%;
+        transform: rotateY(0deg) rotateX(30deg);
     }
-    33.33% {
-        background-position: 100% 0, 50% 100%, 0 0;
+    25% {
+        transform: rotateY(90deg) rotateX(30deg);
     }
-    66.66% {
-        background-position: 50% 100%, 0 0, 100% 0;
+    50% {
+        transform: rotateY(180deg) rotateX(30deg);
+    }
+    75% {
+        transform: rotateY(270deg) rotateX(30deg);
     }
     100% {
-        background-position: 0 0, 100% 0, 50% 100%;
+        transform: rotateY(360deg) rotateX(30deg);
     }
 }
 
+/* 四棱锥样式 */
+.pyramid {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    transform-style: preserve-3d;
+    animation: pyramidSpin 3s infinite linear;
+}
+
+.pyramid::before,
+.pyramid::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* 上四棱锥 - 顶点指向文字 */
+.pyramid-top::before {
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #3498db transparent;
+    /* 蓝色 */
+    filter: brightness(0.8);
+    /* 稍微暗一点增加立体感 */
+}
+
+.pyramid-top::after {
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #2980b9 transparent;
+    /* 深蓝色 */
+    transform: rotateY(180deg);
+    filter: brightness(0.6);
+    /* 更暗增加立体感 */
+}
+
+/* 下四棱锥 - 顶点指向文字 */
+.pyramid-bottom::before {
+    border-width: 10px 6px 0 6px;
+    border-color: #e74c3c transparent transparent transparent;
+    /* 红色 */
+    filter: brightness(0.8);
+}
+
+.pyramid-bottom::after {
+    border-width: 10px 6px 0 6px;
+    border-color: #c0392b transparent transparent transparent;
+    /* 深红色 */
+    transform: rotateY(180deg);
+    filter: brightness(0.6);
+}
+
+/* 修改标题前的图标为四棱锥 */
 #article-container h1:before,
 #article-container h2:before,
 #article-container h3:before,
@@ -48,151 +105,152 @@ hr:before {
     -o-transition: all .2s ease-out;
     -ms-transition: all .2s ease-out;
     transition: all .2s ease-out;
-    /* 绘制三个蓝色小方格 */
-    background-image: 
-        linear-gradient(rgb(0, 132, 255), rgb(0, 132, 255)),
-        linear-gradient(rgb(7, 106, 244), rgb(7, 106, 244)),
-        linear-gradient(rgb(11, 82, 246), rgb(11, 82, 246));
-    background-size: 45% 45%; /* 增大方格尺寸 */
-    background-repeat: no-repeat;
-    background-position: 0 0, 100% 0, 50% 100%;
-    /* 应用动画，将时长从 2s 调整为 4s 以减慢速度 */
-    animation: squareSwap 4s infinite linear;
+    
+    /* 移除原来的三个方块样式 */
+    background-image: none;
+    animation: none;
+    
+    /* 添加上四棱锥 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#article-container h1 {
-    padding-left: 1.6rem; /* 适当增加内边距 */
-}
-
-#article-container h1 code {
-    font-size: 1rem
-}
-
+/* 为每个标题创建上下两个四棱锥的容器 */
 #article-container h1:before {
+    content: '';
     margin-left: -1.5rem;
-    top: calc(50% - .7rem);
-    width: 1.4rem; /* 增大方框宽度 */
-    height: 1.4rem; /* 增大方框高度 */
-}
-
-#article-container h1:hover {
-    padding-left: 1.8rem
-}
-
-#article-container h2 {
-    padding-left: 1.5rem; /* 适当增加内边距 */
-}
-
-#article-container h2 code {
-    font-size: .9rem
+    top: calc(50% - 1.2rem);
+    width: 1.4rem;
+    height: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #article-container h2:before {
+    content: '';
     margin-left: -1.6rem;
-    top: calc(50% - .65rem);
-    width: 1.3rem; /* 增大方框宽度 */
-    height: 1.3rem; /* 增大方框高度 */
-}
-
-#article-container h2:hover {
-    padding-left: 1.7rem
-}
-
-#article-container h3 {
-    padding-left: 1.4rem; /* 适当增加内边距 */
-}
-
-#article-container h3 code {
-    font-size: .8rem;
-    top: calc(50% - .4rem);
+    top: calc(50% - 1.1rem);
+    width: 1.3rem;
+    height: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #article-container h3:before {
+    content: '';
     margin-left: -1.4rem;
-    top: calc(50% - .6rem);
-    width: 1.2rem; /* 增大方框宽度 */
-    height: 1.2rem; /* 增大方框高度 */
-}
-
-#article-container h3:hover {
-    padding-left: 1.6rem
-}
-
-#article-container h4 {
-    padding-left: 1.3rem; /* 适当增加内边距 */
-}
-
-#article-container h4 code {
-    font-size: .7rem
+    top: calc(50% - 1rem);
+    width: 1.2rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #article-container h4:before {
+    content: '';
     margin-left: -1.2rem;
-    top: calc(50% - .55rem);
-    width: 1.1rem; /* 增大方框宽度 */
-    height: 1.1rem; /* 增大方框高度 */
+    top: calc(50% - 0.9rem);
+    width: 1.1rem;
+    height: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#article-container h4:hover {
-    padding-left: 1.5rem
-}
-
-#article-container h5 {
-    padding-left: 1.2rem; /* 适当增加内边距 */
-}
-
-#article-container h5 code {
-    font-size: .6rem
-}
-
-#article-container h5:before {
-    margin-left: -1rem;
-    top: calc(50% - .5rem);
-    width: 1rem; /* 增大方框宽度 */
-    height: 1rem; /* 增大方框高度 */
-}
-
-#article-container h5:hover {
-    padding-left: 1.4rem
-}
-
-#article-container h6 {
-    padding-left: 1.2rem; /* 适当增加内边距 */
-}
-
-#article-container h6 code {
-    font-size: .6rem
-}
-
+#article-container h5:before,
 #article-container h6:before {
+    content: '';
     margin-left: -1rem;
-    top: calc(50% - .5rem);
-    width: 1rem; /* 增大方框宽度 */
-    height: 1rem; /* 增大方框高度 */
+    top: calc(50% - 0.8rem);
+    width: 1rem;
+    height: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#article-container h6:hover {
-    padding-left: 1.4rem
+/* 使用伪元素创建四棱锥 */
+#article-container h1:before::before,
+#article-container h2:before::before,
+#article-container h3:before::before,
+#article-container h4:before::before,
+#article-container h5:before::before,
+#article-container h6:before::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #3498db transparent;
+    animation: pyramidSpin 3s infinite linear;
+    transform-style: preserve-3d;
 }
 
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px
+#article-container h1:before::after,
+#article-container h2:before::after,
+#article-container h3:before::after,
+#article-container h4:before::after,
+#article-container h5:before::after,
+#article-container h6:before::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 6px 0 6px;
+    border-color: #e74c3c transparent transparent transparent;
+    animation: pyramidSpin 3s infinite linear reverse;
+    transform-style: preserve-3d;
 }
 
-::-webkit-scrollbar-track {
-    border-radius: 2em;
-    /* background-color: rgba(73, 177, 245, .2); */
+/* 调整不同标题级别四棱锥的大小 */
+#article-container h2:before::before,
+#article-container h2:before::after {
+    border-width: 0 5px 8px 5px;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: rgb(255 255 255 / .3);
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
-    border-radius: 2em
+#article-container h3:before::before,
+#article-container h3:before::after {
+    border-width: 0 4px 7px 4px;
 }
 
-::-webkit-scrollbar-corner {
-    background-color: transparent
+#article-container h4:before::before,
+#article-container h4:before::after {
+    border-width: 0 3px 6px 3px;
+}
+
+#article-container h5:before::before,
+#article-container h5:before::after,
+#article-container h6:before::before,
+#article-container h6:before::after {
+    border-width: 0 2px 5px 2px;
+}
+
+/* 调整下四棱锥的大小 */
+#article-container h2:before::after {
+    border-width: 8px 5px 0 5px;
+}
+
+#article-container h3:before::after {
+    border-width: 7px 4px 0 4px;
+}
+
+#article-container h4:before::after {
+    border-width: 6px 3px 0 3px;
+}
+
+#article-container h5:before::after,
+#article-container h6:before::after {
+    border-width: 5px 2px 0 2px;
 }
 
 /* 滚动条 */
