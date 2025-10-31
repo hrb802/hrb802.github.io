@@ -18,18 +18,18 @@ hr:before {
 }
 
 /* 删除原来的三个小方格交换位置动画 */
-/* 添加简单的旋转三角形效果 */
+/* 添加四棱锥旋转动画 */
 
-@keyframes triangleSpin {
+@keyframes pyramidSpin {
     0% {
-        transform: rotate(0deg);
+        transform: rotateY(0deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotateY(360deg);
     }
 }
 
-/* 修改标题前的图标为旋转三角形 - 重置字体设置 */
+/* 修改标题前的图标为四棱锥 */
 #article-container h1:before,
 #article-container h2:before,
 #article-container h3:before,
@@ -45,174 +45,252 @@ hr:before {
     -ms-transition: all .2s ease-out;
     transition: all .2s ease-out;
     
-    /* 重置字体设置，确保边框三角形正常显示 */
-    font-family: unset !important;
-    text-rendering: unset !important;
-    -webkit-font-smoothing: unset !important;
-    
-    /* 移除原来的三个方块样式 */
-    background-image: none !important;
-    animation: none;
-    
-    /* 使用边框创建三角形效果 */
-    border-style: solid;
-    border-color: transparent;
-    animation: triangleSpin 4s infinite linear;
-}
-
-/* h1 的三角形 */
-#article-container h1:before {
-    margin-left: -1.5rem;
-    top: calc(50% - 0.7rem);
-    width: 0;
-    height: 0;
-    border-width: 0 0.7rem 1.2rem 0.7rem;
-    border-bottom-color: #3498db; /* 蓝色三角形 */
-}
-
-/* h2 的三角形 */
-#article-container h2:before {
-    margin-left: -1.6rem;
-    top: calc(50% - 0.65rem);
-    width: 0;
-    height: 0;
-    border-width: 0 0.65rem 1.1rem 0.65rem;
-    border-bottom-color: #3498db;
-}
-
-/* h3 的三角形 */
-#article-container h3:before {
-    margin-left: -1.4rem;
-    top: calc(50% - 0.6rem);
-    width: 0;
-    height: 0;
-    border-width: 0 0.6rem 1rem 0.6rem;
-    border-bottom-color: #3498db;
-}
-
-/* h4 的三角形 */
-#article-container h4:before {
-    margin-left: -1.2rem;
-    top: calc(50% - 0.55rem);
-    width: 0;
-    height: 0;
-    border-width: 0 0.55rem 0.9rem 0.55rem;
-    border-bottom-color: #3498db;
-}
-
-/* h5 的三角形 */
-#article-container h5:before {
-    margin-left: -1rem;
-    top: calc(50% - 0.5rem);
-    width: 0;
-    height: 0;
-    border-width: 0 0.5rem 0.8rem 0.5rem;
-    border-bottom-color: #3498db;
-}
-
-/* h6 的三角形 */
-#article-container h6:before {
-    margin-left: -1rem;
-    top: calc(50% - 0.5rem);
-    width: 0;
-    height: 0;
-    border-width: 0 0.5rem 0.8rem 0.5rem;
-    border-bottom-color: #3498db;
-}
-
-/* 添加第二个三角形（反向旋转） */
-#article-container h1:after,
-#article-container h2:after,
-#article-container h3:after,
-#article-container h4:after,
-#article-container h5:after,
-#article-container h6:after {
-    position: absolute;
-    content: '';
-    border-style: solid;
-    border-color: transparent;
-    animation: triangleSpin 4s infinite linear reverse;
-    
     /* 重置字体设置 */
     font-family: unset !important;
     text-rendering: unset !important;
     -webkit-font-smoothing: unset !important;
+    
+    /* 移除原来的样式 */
+    background-image: none !important;
+    animation: none;
+    border: none;
+    
+    /* 四棱锥容器 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* h1 的第二个三角形（红色，在下方） */
-#article-container h1:after {
-    margin-left: -1.5rem;
-    top: calc(50% + 0.3rem);
+/* 创建四棱锥形状 */
+.pyramid {
     width: 0;
     height: 0;
-    border-width: 1.2rem 0.7rem 0 0.7rem;
-    border-top-color: #e74c3c; /* 红色三角形 */
+    border-style: solid;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: pyramidSpin 3s infinite linear;
 }
 
-/* h2 的第二个三角形 */
-#article-container h2:after {
+/* 上四棱锥 - 大号 */
+.pyramid-top {
+    border-width: 0 8px 14px 8px;
+    border-color: transparent transparent #3498db transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* 下四棱锥 - 小号 */
+.pyramid-bottom {
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #2980b9 transparent;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* 为四棱锥添加渐变效果 */
+.pyramid-top::before,
+.pyramid-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 14px 8px;
+    border-color: transparent transparent rgba(52, 152, 219, 0.7) transparent;
+    transform: translateZ(5px);
+}
+
+/* h1 的四棱锥 */
+#article-container h1:before {
+    margin-left: -2rem;
+    top: calc(50% - 1.5rem);
+    width: 1.6rem;
+    height: 3rem;
+}
+
+#article-container h1:before::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 14px 8px;
+    border-color: transparent transparent #3498db transparent;
+    animation: pyramidSpin 3s infinite linear;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+#article-container h1:before::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #2980b9 transparent;
+    animation: pyramidSpin 3s infinite linear reverse;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* h2 的四棱锥 */
+#article-container h2:before {
+    margin-left: -1.8rem;
+    top: calc(50% - 1.3rem);
+    width: 1.4rem;
+    height: 2.6rem;
+}
+
+#article-container h2:before::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7px 12px 7px;
+    border-color: transparent transparent #3498db transparent;
+    animation: pyramidSpin 3s infinite linear;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+#article-container h2:before::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 9px 5px;
+    border-color: transparent transparent #2980b9 transparent;
+    animation: pyramidSpin 3s infinite linear reverse;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* h3 的四棱锥 */
+#article-container h3:before {
     margin-left: -1.6rem;
-    top: calc(50% + 0.25rem);
-    width: 0;
-    height: 0;
-    border-width: 1.1rem 0.65rem 0 0.65rem;
-    border-top-color: #e74c3c;
+    top: calc(50% - 1.1rem);
+    width: 1.2rem;
+    height: 2.2rem;
 }
 
-/* h3 的第二个三角形 */
-#article-container h3:after {
+#article-container h3:before::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #3498db transparent;
+    animation: pyramidSpin 3s infinite linear;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+#article-container h3:before::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 7px 4px;
+    border-color: transparent transparent #2980b9 transparent;
+    animation: pyramidSpin 3s infinite linear reverse;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* h4 的四棱锥 */
+#article-container h4:before {
     margin-left: -1.4rem;
-    top: calc(50% + 0.2rem);
-    width: 0;
-    height: 0;
-    border-width: 1rem 0.6rem 0 0.6rem;
-    border-top-color: #e74c3c;
+    top: calc(50% - 0.9rem);
+    width: 1rem;
+    height: 1.8rem;
 }
 
-/* h4 的第二个三角形 */
-#article-container h4:after {
+#article-container h4:before::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent #3498db transparent;
+    animation: pyramidSpin 3s infinite linear;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+#article-container h4:before::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 3px 6px 3px;
+    border-color: transparent transparent #2980b9 transparent;
+    animation: pyramidSpin 3s infinite linear reverse;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* h5 和 h6 的四棱锥 */
+#article-container h5:before,
+#article-container h6:before {
     margin-left: -1.2rem;
-    top: calc(50% + 0.15rem);
-    width: 0;
-    height: 0;
-    border-width: 0.9rem 0.55rem 0 0.55rem;
-    border-top-color: #e74c3c;
+    top: calc(50% - 0.7rem);
+    width: 0.8rem;
+    height: 1.4rem;
 }
 
-/* h5 的第二个三角形 */
-#article-container h5:after {
-    margin-left: -1rem;
-    top: calc(50% + 0.1rem);
+#article-container h5:before::before,
+#article-container h6:before::before {
+    content: '';
     width: 0;
     height: 0;
-    border-width: 0.8rem 0.5rem 0 0.5rem;
-    border-top-color: #e74c3c;
+    border-style: solid;
+    border-width: 0 4px 6px 4px;
+    border-color: transparent transparent #3498db transparent;
+    animation: pyramidSpin 3s infinite linear;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
-/* h6 的第二个三角形 */
-#article-container h6:after {
-    margin-left: -1rem;
-    top: calc(50% + 0.1rem);
+#article-container h5:before::after,
+#article-container h6:before::after {
+    content: '';
     width: 0;
     height: 0;
-    border-width: 0.8rem 0.5rem 0 0.5rem;
-    border-top-color: #e74c3c;
+    border-style: solid;
+    border-width: 0 2px 4px 2px;
+    border-color: transparent transparent #2980b9 transparent;
+    animation: pyramidSpin 3s infinite linear reverse;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
 }
 
 /* 悬停效果 */
-#article-container h1:hover:before,
-#article-container h1:hover:after,
-#article-container h2:hover:before,
-#article-container h2:hover:after,
-#article-container h3:hover:before,
-#article-container h3:hover:after,
-#article-container h4:hover:before,
-#article-container h4:hover:after,
-#article-container h5:hover:before,
-#article-container h5:hover:after,
-#article-container h6:hover:before,
-#article-container h6:hover:after {
-    animation-duration: 2s; /* 悬停时旋转更快 */
+#article-container h1:hover:before::before,
+#article-container h1:hover:before::after,
+#article-container h2:hover:before::before,
+#article-container h2:hover:before::after,
+#article-container h3:hover:before::before,
+#article-container h3:hover:before::after,
+#article-container h4:hover:before::before,
+#article-container h4:hover:before::after,
+#article-container h5:hover:before::before,
+#article-container h5:hover:before::after,
+#article-container h6:hover:before::before,
+#article-container h6:hover:before::after {
+    animation-duration: 1.5s;
+}
+
+/* 添加渐变背景增强立体感 */
+#article-container h1:before::before,
+#article-container h2:before::before,
+#article-container h3:before::before,
+#article-container h4:before::before,
+#article-container h5:before::before,
+#article-container h6:before::before {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#article-container h1:before::after,
+#article-container h2:before::after,
+#article-container h3:before::after,
+#article-container h4:before::after,
+#article-container h5:before::after,
+#article-container h6:before::after {
+    background: linear-gradient(135deg, #2980b9, #1c5a85);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 /* 滚动条 */
 ::-webkit-scrollbar {
