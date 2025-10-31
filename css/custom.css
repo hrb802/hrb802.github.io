@@ -1,4 +1,4 @@
-/* #article-container h1:before,
+#article-container h1:before,
 #article-container h2:before,
 #article-container h3:before,
 #article-container h4:before,
@@ -15,81 +15,21 @@ hr:before {
     font-family: 'Font Awesome 5 Free';
     text-rendering: auto;
     -webkit-font-smoothing: antialiased
-} */
+}
 
 /* 删除原来的三个小方格交换位置动画 */
-/* 添加四棱锥旋转动画 */
-@keyframes pyramidSpin {
+/* 添加简单的旋转三角形效果 */
+
+@keyframes triangleSpin {
     0% {
-        transform: rotateY(0deg) rotateX(30deg);
-    }
-    25% {
-        transform: rotateY(90deg) rotateX(30deg);
-    }
-    50% {
-        transform: rotateY(180deg) rotateX(30deg);
-    }
-    75% {
-        transform: rotateY(270deg) rotateX(30deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotateY(360deg) rotateX(30deg);
+        transform: rotate(360deg);
     }
 }
 
-/* 四棱锥样式 */
-.pyramid {
-    position: relative;
-    width: 12px;
-    height: 12px;
-    transform-style: preserve-3d;
-    animation: pyramidSpin 3s infinite linear;
-}
-
-.pyramid::before,
-.pyramid::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-/* 上四棱锥 - 顶点指向文字 */
-.pyramid-top::before {
-    border-width: 0 6px 10px 6px;
-    border-color: transparent transparent #3498db transparent;
-    /* 蓝色 */
-    filter: brightness(0.8);
-    /* 稍微暗一点增加立体感 */
-}
-
-.pyramid-top::after {
-    border-width: 0 6px 10px 6px;
-    border-color: transparent transparent #2980b9 transparent;
-    /* 深蓝色 */
-    transform: rotateY(180deg);
-    filter: brightness(0.6);
-    /* 更暗增加立体感 */
-}
-
-/* 下四棱锥 - 顶点指向文字 */
-.pyramid-bottom::before {
-    border-width: 10px 6px 0 6px;
-    border-color: #e74c3c transparent transparent transparent;
-    /* 红色 */
-    filter: brightness(0.8);
-}
-
-.pyramid-bottom::after {
-    border-width: 10px 6px 0 6px;
-    border-color: #c0392b transparent transparent transparent;
-    /* 深红色 */
-    transform: rotateY(180deg);
-    filter: brightness(0.6);
-}
-
-/* 修改标题前的图标为四棱锥 */
+/* 修改标题前的图标为旋转三角形 - 重置字体设置 */
 #article-container h1:before,
 #article-container h2:before,
 #article-container h3:before,
@@ -97,7 +37,6 @@ hr:before {
 #article-container h5:before,
 #article-container h6:before {
     position: absolute;
-    color: #f47466;
     content: '';
     line-height: 1;
     -webkit-transition: all .2s ease-out;
@@ -106,153 +45,175 @@ hr:before {
     -ms-transition: all .2s ease-out;
     transition: all .2s ease-out;
     
+    /* 重置字体设置，确保边框三角形正常显示 */
+    font-family: unset !important;
+    text-rendering: unset !important;
+    -webkit-font-smoothing: unset !important;
+    
     /* 移除原来的三个方块样式 */
-    background-image: none;
+    background-image: none !important;
     animation: none;
     
-    /* 添加上四棱锥 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* 使用边框创建三角形效果 */
+    border-style: solid;
+    border-color: transparent;
+    animation: triangleSpin 4s infinite linear;
 }
 
-/* 为每个标题创建上下两个四棱锥的容器 */
+/* h1 的三角形 */
 #article-container h1:before {
-    content: '';
     margin-left: -1.5rem;
-    top: calc(50% - 1.2rem);
-    width: 1.4rem;
-    height: 2.4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    top: calc(50% - 0.7rem);
+    width: 0;
+    height: 0;
+    border-width: 0 0.7rem 1.2rem 0.7rem;
+    border-bottom-color: #3498db; /* 蓝色三角形 */
 }
 
+/* h2 的三角形 */
 #article-container h2:before {
-    content: '';
     margin-left: -1.6rem;
-    top: calc(50% - 1.1rem);
-    width: 1.3rem;
-    height: 2.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    top: calc(50% - 0.65rem);
+    width: 0;
+    height: 0;
+    border-width: 0 0.65rem 1.1rem 0.65rem;
+    border-bottom-color: #3498db;
 }
 
+/* h3 的三角形 */
 #article-container h3:before {
-    content: '';
     margin-left: -1.4rem;
-    top: calc(50% - 1rem);
-    width: 1.2rem;
-    height: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    top: calc(50% - 0.6rem);
+    width: 0;
+    height: 0;
+    border-width: 0 0.6rem 1rem 0.6rem;
+    border-bottom-color: #3498db;
 }
 
+/* h4 的三角形 */
 #article-container h4:before {
-    content: '';
     margin-left: -1.2rem;
-    top: calc(50% - 0.9rem);
-    width: 1.1rem;
-    height: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    top: calc(50% - 0.55rem);
+    width: 0;
+    height: 0;
+    border-width: 0 0.55rem 0.9rem 0.55rem;
+    border-bottom-color: #3498db;
 }
 
-#article-container h5:before,
-#article-container h6:before {
-    content: '';
+/* h5 的三角形 */
+#article-container h5:before {
     margin-left: -1rem;
-    top: calc(50% - 0.8rem);
-    width: 1rem;
-    height: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* 使用伪元素创建四棱锥 */
-#article-container h1:before::before,
-#article-container h2:before::before,
-#article-container h3:before::before,
-#article-container h4:before::before,
-#article-container h5:before::before,
-#article-container h6:before::before {
-    content: '';
+    top: calc(50% - 0.5rem);
     width: 0;
     height: 0;
-    border-style: solid;
-    border-width: 0 6px 10px 6px;
-    border-color: transparent transparent #3498db transparent;
-    animation: pyramidSpin 3s infinite linear;
-    transform-style: preserve-3d;
+    border-width: 0 0.5rem 0.8rem 0.5rem;
+    border-bottom-color: #3498db;
 }
 
-#article-container h1:before::after,
-#article-container h2:before::after,
-#article-container h3:before::after,
-#article-container h4:before::after,
-#article-container h5:before::after,
-#article-container h6:before::after {
-    content: '';
+/* h6 的三角形 */
+#article-container h6:before {
+    margin-left: -1rem;
+    top: calc(50% - 0.5rem);
     width: 0;
     height: 0;
+    border-width: 0 0.5rem 0.8rem 0.5rem;
+    border-bottom-color: #3498db;
+}
+
+/* 添加第二个三角形（反向旋转） */
+#article-container h1:after,
+#article-container h2:after,
+#article-container h3:after,
+#article-container h4:after,
+#article-container h5:after,
+#article-container h6:after {
+    position: absolute;
+    content: '';
     border-style: solid;
-    border-width: 10px 6px 0 6px;
-    border-color: #e74c3c transparent transparent transparent;
-    animation: pyramidSpin 3s infinite linear reverse;
-    transform-style: preserve-3d;
+    border-color: transparent;
+    animation: triangleSpin 4s infinite linear reverse;
+    
+    /* 重置字体设置 */
+    font-family: unset !important;
+    text-rendering: unset !important;
+    -webkit-font-smoothing: unset !important;
 }
 
-/* 调整不同标题级别四棱锥的大小 */
-#article-container h2:before::before,
-#article-container h2:before::after {
-    border-width: 0 5px 8px 5px;
+/* h1 的第二个三角形（红色，在下方） */
+#article-container h1:after {
+    margin-left: -1.5rem;
+    top: calc(50% + 0.3rem);
+    width: 0;
+    height: 0;
+    border-width: 1.2rem 0.7rem 0 0.7rem;
+    border-top-color: #e74c3c; /* 红色三角形 */
 }
 
-#article-container h3:before::before,
-#article-container h3:before::after {
-    border-width: 0 4px 7px 4px;
+/* h2 的第二个三角形 */
+#article-container h2:after {
+    margin-left: -1.6rem;
+    top: calc(50% + 0.25rem);
+    width: 0;
+    height: 0;
+    border-width: 1.1rem 0.65rem 0 0.65rem;
+    border-top-color: #e74c3c;
 }
 
-#article-container h4:before::before,
-#article-container h4:before::after {
-    border-width: 0 3px 6px 3px;
+/* h3 的第二个三角形 */
+#article-container h3:after {
+    margin-left: -1.4rem;
+    top: calc(50% + 0.2rem);
+    width: 0;
+    height: 0;
+    border-width: 1rem 0.6rem 0 0.6rem;
+    border-top-color: #e74c3c;
 }
 
-#article-container h5:before::before,
-#article-container h5:before::after,
-#article-container h6:before::before,
-#article-container h6:before::after {
-    border-width: 0 2px 5px 2px;
+/* h4 的第二个三角形 */
+#article-container h4:after {
+    margin-left: -1.2rem;
+    top: calc(50% + 0.15rem);
+    width: 0;
+    height: 0;
+    border-width: 0.9rem 0.55rem 0 0.55rem;
+    border-top-color: #e74c3c;
 }
 
-/* 调整下四棱锥的大小 */
-#article-container h2:before::after {
-    border-width: 8px 5px 0 5px;
+/* h5 的第二个三角形 */
+#article-container h5:after {
+    margin-left: -1rem;
+    top: calc(50% + 0.1rem);
+    width: 0;
+    height: 0;
+    border-width: 0.8rem 0.5rem 0 0.5rem;
+    border-top-color: #e74c3c;
 }
 
-#article-container h3:before::after {
-    border-width: 7px 4px 0 4px;
+/* h6 的第二个三角形 */
+#article-container h6:after {
+    margin-left: -1rem;
+    top: calc(50% + 0.1rem);
+    width: 0;
+    height: 0;
+    border-width: 0.8rem 0.5rem 0 0.5rem;
+    border-top-color: #e74c3c;
 }
 
-#article-container h4:before::after {
-    border-width: 6px 3px 0 3px;
+/* 悬停效果 */
+#article-container h1:hover:before,
+#article-container h1:hover:after,
+#article-container h2:hover:before,
+#article-container h2:hover:after,
+#article-container h3:hover:before,
+#article-container h3:hover:after,
+#article-container h4:hover:before,
+#article-container h4:hover:after,
+#article-container h5:hover:before,
+#article-container h5:hover:after,
+#article-container h6:hover:before,
+#article-container h6:hover:after {
+    animation-duration: 2s; /* 悬停时旋转更快 */
 }
-
-#article-container h5:before::after,
-#article-container h6:before::after {
-    border-width: 5px 2px 0 2px;
-}
-
 /* 滚动条 */
 ::-webkit-scrollbar {
     width: 8px;
