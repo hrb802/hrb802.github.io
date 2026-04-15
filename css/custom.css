@@ -1,0 +1,310 @@
+#article-container h1:before,
+#article-container h2:before,
+#article-container h3:before,
+#article-container h4:before,
+#article-container h5:before,
+#article-container h6:before,
+#post .post-outdate-notice:before,
+.fontawesomeIcon,
+.note:not(.no-icon)::before,
+hr:before {
+    display: inline-block;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    font-family: 'Font Awesome 5 Free';
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased
+}
+
+/* 定义三个小方格交换位置的动画 */
+@keyframes squareSwap {
+    0% {
+        background-position: 0 0, 100% 0, 50% 100%;
+    }
+    33.33% {
+        background-position: 100% 0, 50% 100%, 0 0;
+    }
+    66.66% {
+        background-position: 50% 100%, 0 0, 100% 0;
+    }
+    100% {
+        background-position: 0 0, 100% 0, 50% 100%;
+    }
+}
+
+#article-container h1:before,
+#article-container h2:before,
+#article-container h3:before,
+#article-container h4:before,
+#article-container h5:before,
+#article-container h6:before {
+    position: absolute;
+    color: #f47466;
+    content: '';
+    line-height: 1;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    /* 绘制三个蓝色小方格 */
+    background-image: 
+        linear-gradient(rgb(0, 132, 255), rgb(0, 132, 255)),
+        linear-gradient(rgb(7, 106, 244), rgb(7, 106, 244)),
+        linear-gradient(rgb(11, 82, 246), rgb(11, 82, 246));
+    background-size: 45% 45%; /* 增大方格尺寸 */
+    background-repeat: no-repeat;
+    background-position: 0 0, 100% 0, 50% 100%;
+    /* 应用动画，将时长从 2s 调整为 4s 以减慢速度 */
+    animation: squareSwap 4s infinite linear;
+}
+
+#article-container h1 {
+    padding-left: 1.6rem; /* 适当增加内边距 */
+}
+
+#article-container h1 code {
+    font-size: 1rem
+}
+
+#article-container h1:before {
+    margin-left: -1.5rem;
+    top: calc(50% - .7rem);
+    width: 1.4rem; /* 增大方框宽度 */
+    height: 1.4rem; /* 增大方框高度 */
+}
+
+#article-container h1:hover {
+    padding-left: 1.8rem
+}
+
+#article-container h2 {
+    padding-left: 1.5rem; /* 适当增加内边距 */
+}
+
+#article-container h2 code {
+    font-size: .9rem
+}
+
+#article-container h2:before {
+    margin-left: -1.6rem;
+    top: calc(50% - .65rem);
+    width: 1.3rem; /* 增大方框宽度 */
+    height: 1.3rem; /* 增大方框高度 */
+}
+
+#article-container h2:hover {
+    padding-left: 1.7rem
+}
+
+#article-container h3 {
+    padding-left: 1.4rem; /* 适当增加内边距 */
+}
+
+#article-container h3 code {
+    font-size: .8rem;
+    top: calc(50% - .4rem);
+}
+
+#article-container h3:before {
+    margin-left: -1.4rem;
+    top: calc(50% - .6rem);
+    width: 1.2rem; /* 增大方框宽度 */
+    height: 1.2rem; /* 增大方框高度 */
+}
+
+#article-container h3:hover {
+    padding-left: 1.6rem
+}
+
+#article-container h4 {
+    padding-left: 1.3rem; /* 适当增加内边距 */
+}
+
+#article-container h4 code {
+    font-size: .7rem
+}
+
+#article-container h4:before {
+    margin-left: -1.2rem;
+    top: calc(50% - .55rem);
+    width: 1.1rem; /* 增大方框宽度 */
+    height: 1.1rem; /* 增大方框高度 */
+}
+
+#article-container h4:hover {
+    padding-left: 1.5rem
+}
+
+#article-container h5 {
+    padding-left: 1.2rem; /* 适当增加内边距 */
+}
+
+#article-container h5 code {
+    font-size: .6rem
+}
+
+#article-container h5:before {
+    margin-left: -1rem;
+    top: calc(50% - .5rem);
+    width: 1rem; /* 增大方框宽度 */
+    height: 1rem; /* 增大方框高度 */
+}
+
+#article-container h5:hover {
+    padding-left: 1.4rem
+}
+
+#article-container h6 {
+    padding-left: 1.2rem; /* 适当增加内边距 */
+}
+
+#article-container h6 code {
+    font-size: .6rem
+}
+
+#article-container h6:before {
+    margin-left: -1rem;
+    top: calc(50% - .5rem);
+    width: 1rem; /* 增大方框宽度 */
+    height: 1rem; /* 增大方框高度 */
+}
+
+#article-container h6:hover {
+    padding-left: 1.4rem
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 2em;
+    /* background-color: rgba(73, 177, 245, .2); */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / .3);
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+    border-radius: 2em
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 2em;
+    /* background-color: rgba(73, 177, 245, .2); */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / .3);
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+    border-radius: 2em
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent
+}
+
+/* 鼠标点击效果样式 */
+.click-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: clickFadeOut 1s linear forwards;
+}
+
+@keyframes clickFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(5);
+    }
+}
+
+/* 音乐容器整体样式，设置背景图 */
+.music-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.music-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: '/img/紫罗兰永恒花园.jpg';
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+
+/* 音乐列表样式，取消滚动，设置网格布局 */
+.aplayer-list {
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, 1fr) !important;
+  gap: 10px !important;
+  max-height: none !important;
+}
+
+/* 限制每一页最多 27 首歌 */
+.aplayer-list ol li:nth-child(n+28) {
+  display: none !important;
+}
+
+/* 歌曲项样式 */
+.aplayer-list li {
+  padding: 10px !important;
+  border-bottom: 1px solid #ccc !important;
+  cursor: pointer !important;
+  color: #090909 !important; 
+  font-size: 16px !important; 
+}
+
+/* 鼠标悬停歌曲项样式 */
+.aplayer-list li:hover {
+  background-color: #369 !important;
+  color: white;
+}
+
+/* 当前播放歌曲样式 */
+.aplayer-list li.aplayer-list-light {
+  background-color: rgba(86, 162, 228, 0.903) !important;
+  font-weight: bold !important;
+  font-size: 18px !important; 
+}
+
+/* 歌词容器样式 */
+.aplayer-lrc {
+  color: #040404 !important; 
+  font-size: 16px !important; 
+}
+
+/* 播放器样式 */
+.aplayer {
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
